@@ -1,0 +1,43 @@
+[package]
+authors = ["Tookey <admin@tookey.io>"]
+edition = "2021"
+name = "tookey-libtss-ethereum"
+version = "1.2.0"
+license = "GPL-3.0"
+description = "Library with Threshold Signatures Scheme for NodeJS"
+homepage = "https://github.com/tookey-io/libtss-ethereum"
+repository = "https://github.com/tookey-io/libtss-ethereum"
+
+
+[profile.release]
+lto = true
+
+[lib]
+crate-type = ["lib", "cdylib"]
+
+[features]
+default = ["bigint", "napi"]
+rust = ["napi-derive/noop"]
+bigint = ["tookey-libtss/bigint"]
+gmp = ["tookey-libtss/gmp"]
+napi = ["dep:napi", "dep:napi-build", "napi-derive/default", "tookey-libtss/napi"]
+
+[build-dependencies]
+napi-build = { version = "2", optional = true }
+
+[dependencies]
+anyhow = "1.0.65"
+
+# NodeJS
+napi = { version = "2.10", features = ["async", "serde-json"], optional = true }
+napi-derive = { version = "2" }
+
+# Ethers
+rlp = "0.5"
+web3 = { version = "0.18", default-features = false }
+ethereum-types = "0.14"
+hex = "0.4"
+serde = "1.0"
+serde_json = "1.0"
+
+tookey-libtss = { version = "1.2", default-features = false }
