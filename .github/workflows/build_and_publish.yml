@@ -1,7 +1,7 @@
 name: Build and Publish
 env:
   DEBUG: napi:*
-  APP_NAME: libtss
+  APP_NAME: libtss-ethereum
   MACOSX_DEPLOYMENT_TARGET: '10.13'
 
 on:
