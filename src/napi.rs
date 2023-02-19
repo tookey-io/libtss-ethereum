@@ -36,6 +36,21 @@ pub struct EthersResult {
 
 #[napi]
 #[allow(dead_code)]
+pub fn public_key_to_ethereum_address(public_key: String) -> EthersResult {
+  match crate::ethers::public_key_to_ethereum_address(public_key) {
+    Ok(val) => EthersResult {
+      result: Some(val),
+      error: None,
+    },
+    Err(err) => EthersResult {
+      result: None,
+      error: Some(format!("{:?}", err)),
+    },
+  }
+}
+
+#[napi]
+#[allow(dead_code)]
 pub fn private_key_to_ethereum_address(private_key: String) -> EthersResult {
   match crate::ethers::private_key_to_ethereum_address(private_key) {
     Ok(val) => EthersResult {

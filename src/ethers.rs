@@ -3,7 +3,7 @@ use anyhow::Context;
 use hex::ToHex;
 use std::ops::Deref;
 use tookey_libtss::curv::arithmetic::Integer;
-use tookey_libtss::curv::elliptic::curves::secp256_k1::Secp256k1Scalar;
+use tookey_libtss::curv::elliptic::curves::secp256_k1::{Secp256k1Scalar, Secp256k1Point};
 use tookey_libtss::curv::elliptic::curves::{ECPoint, ECScalar, Scalar, Secp256k1};
 use tookey_libtss::curv::BigInt;
 use tookey_libtss::ecdsa::state_machine::keygen::LocalKey;
@@ -71,6 +71,15 @@ pub fn encode_transaction(tx_request: String, signature_recid: String) -> anyhow
 
   Ok(transaction.encode(Some(&sig)))
 }
+
+pub fn public_key_to_ethereum_address(public_key: String) -> anyhow::Result<String> {
+  let buffer = bytes_from_hex(public_key)?;
+  let point = Secp256k1Point::deserialize(&buffer)?.serialize_uncompressed();
+
+  let hash = keccak256(&point[1..]);
+  Ok(checksum(Address::from_slice(&hash[12..])))
+}
+
 
 /// Convert Tookey private key to ethereum public address
 pub fn private_key_to_ethereum_address(private_key: String) -> anyhow::Result<String> {
@@ -141,4 +150,18 @@ fn checksum(address: Address) -> String {
 
       acc
     })
+}
+#[cfg(test)]
+pub mod test {
+    use super::public_key_to_ethereum_address;
+
+  #[test]
+  fn address_from_public_key() {
+    let expected = "0x6cc93958DA6Bf5de40A15935A53eabB6695AaF9e";
+    let public_key = "02df6a1f98f0c2ba133f928de2f7cc4b0c595afbe6b5a4cd3e56f6c7a5bcd5f19f";
+
+    let calculated = public_key_to_ethereum_address(public_key.to_owned()).unwrap();
+
+    assert_eq!(calculated, expected);
+  }
 }
