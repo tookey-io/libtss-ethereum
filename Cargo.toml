@@ -2,7 +2,7 @@
 authors = ["Tookey <admin@tookey.io>"]
 edition = "2021"
 name = "tookey-libtss-ethereum"
-version = "1.2.0"
+version = "1.2.1"
 license = "GPL-3.0"
 description = "Library with Threshold Signatures Scheme for NodeJS"
 homepage = "https://github.com/tookey-io/libtss-ethereum"
