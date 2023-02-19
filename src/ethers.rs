@@ -3,7 +3,7 @@ use anyhow::Context;
 use hex::ToHex;
 use std::ops::Deref;
 use tookey_libtss::curv::arithmetic::Integer;
-use tookey_libtss::curv::elliptic::curves::secp256_k1::{Secp256k1Scalar, Secp256k1Point};
+use tookey_libtss::curv::elliptic::curves::secp256_k1::{Secp256k1Point, Secp256k1Scalar};
 use tookey_libtss::curv::elliptic::curves::{ECPoint, ECScalar, Scalar, Secp256k1};
 use tookey_libtss::curv::BigInt;
 use tookey_libtss::ecdsa::state_machine::keygen::LocalKey;
@@ -80,7 +80,6 @@ pub fn public_key_to_ethereum_address(public_key: String) -> anyhow::Result<Stri
   Ok(checksum(Address::from_slice(&hash[12..])))
 }
 
-
 /// Convert Tookey private key to ethereum public address
 pub fn private_key_to_ethereum_address(private_key: String) -> anyhow::Result<String> {
   let key: LocalKey<Secp256k1> = serde_json::from_str(&private_key)?;
@@ -153,7 +152,7 @@ fn checksum(address: Address) -> String {
 }
 #[cfg(test)]
 pub mod test {
-    use super::public_key_to_ethereum_address;
+  use super::public_key_to_ethereum_address;
 
   #[test]
   fn address_from_public_key() {

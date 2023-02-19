@@ -44,6 +44,7 @@ export interface EthersResult {
   result?: string
   error?: string
 }
+export function publicKeyToEthereumAddress(publicKey: string): EthersResult
 export function privateKeyToEthereumAddress(privateKey: string): EthersResult
 export function privateKeyToPublicKey(privateKey: string, compressed?: boolean | undefined | null): EthersResult
 export function encodeMessageSignature(messageHash: string, chainId: number, signatureRecid: string): EthersResult

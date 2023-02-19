@@ -4,7 +4,7 @@ Helper library with realization for Threshold Signatures and common code for oth
 
 # Rust usage
 
-Add `tookey-libtss-ethereum = { version = "1.2.0", default-features = false, features = ["gmp"] }` to Cargo.toml
+Add `tookey-libtss-ethereum = { version = "1.2.1", default-features = false, features = ["gmp"] }` to Cargo.toml
 
 # NodeJs usage
 

@@ -218,12 +218,20 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { getVersion, keygen, sign, privateKeyToEthereumAddress, privateKeyToPublicKey, encodeMessageSignature } =
-  nativeBinding
+const {
+  getVersion,
+  keygen,
+  sign,
+  publicKeyToEthereumAddress,
+  privateKeyToEthereumAddress,
+  privateKeyToPublicKey,
+  encodeMessageSignature,
+} = nativeBinding
 
 module.exports.getVersion = getVersion
 module.exports.keygen = keygen
 module.exports.sign = sign
+module.exports.publicKeyToEthereumAddress = publicKeyToEthereumAddress
 module.exports.privateKeyToEthereumAddress = privateKeyToEthereumAddress
 module.exports.privateKeyToPublicKey = privateKeyToPublicKey
 module.exports.encodeMessageSignature = encodeMessageSignature
