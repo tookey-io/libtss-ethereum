@@ -1,6 +1,6 @@
 {
   "name": "@tookey-io/libtss-ethereum-linux-arm64-musl",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "os": [
     "linux"
   ],

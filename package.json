@@ -1,6 +1,6 @@
 {
   "name": "@tookey-io/libtss-ethereum",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Threshold Signatures Library for https://tookey.io",
   "main": "index.js",
   "license": "GPL-3.0",
