@@ -2354,7 +2354,7 @@ dependencies = [
 
 [[package]]
 name = "tookey-libtss-ethereum"
-version = "1.2.1"
+version = "1.2.4"
 dependencies = [
  "anyhow",
  "ethereum-types 0.14.1",
