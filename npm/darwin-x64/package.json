@@ -7,9 +7,9 @@
   "cpu": [
     "x64"
   ],
-  "main": "libtss.darwin-x64.node",
+  "main": "libtss-ethereum.darwin-x64.node",
   "files": [
-    "libtss.darwin-x64.node"
+    "libtss-ethereum.darwin-x64.node"
   ],
   "description": "Template project for writing node package with napi-rs",
   "keywords": [

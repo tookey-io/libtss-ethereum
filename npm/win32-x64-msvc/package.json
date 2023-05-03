@@ -7,9 +7,9 @@
   "cpu": [
     "x64"
   ],
-  "main": "libtss.win32-x64-msvc.node",
+  "main": "libtss-ethereum.win32-x64-msvc.node",
   "files": [
-    "libtss.win32-x64-msvc.node"
+    "libtss-ethereum.win32-x64-msvc.node"
   ],
   "description": "Template project for writing node package with napi-rs",
   "keywords": [

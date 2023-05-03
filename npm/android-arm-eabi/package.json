@@ -7,9 +7,9 @@
   "cpu": [
     "arm"
   ],
-  "main": "libtss.android-arm-eabi.node",
+  "main": "libtss-ethereum.android-arm-eabi.node",
   "files": [
-    "libtss.android-arm-eabi.node"
+    "libtss-ethereum.android-arm-eabi.node"
   ],
   "description": "Template project for writing node package with napi-rs",
   "keywords": [

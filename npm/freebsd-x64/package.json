@@ -7,9 +7,9 @@
   "cpu": [
     "x64"
   ],
-  "main": "libtss.freebsd-x64.node",
+  "main": "libtss-ethereum.freebsd-x64.node",
   "files": [
-    "libtss.freebsd-x64.node"
+    "libtss-ethereum.freebsd-x64.node"
   ],
   "description": "Template project for writing node package with napi-rs",
   "keywords": [

@@ -10,9 +10,9 @@
   "libc": [
     "glibc"
   ],
-  "main": "libtss.linux-arm64-gnu.node",
+  "main": "libtss-ethereum.linux-arm64-gnu.node",
   "files": [
-    "libtss.linux-arm64-gnu.node"
+    "libtss-ethereum.linux-arm64-gnu.node"
   ],
   "description": "Template project for writing node package with napi-rs",
   "keywords": [

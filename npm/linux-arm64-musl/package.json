@@ -10,9 +10,9 @@
   "libc": [
     "musl"
   ],
-  "main": "libtss.linux-arm64-musl.node",
+  "main": "libtss-ethereum.linux-arm64-musl.node",
   "files": [
-    "libtss.linux-arm64-musl.node"
+    "libtss-ethereum.linux-arm64-musl.node"
   ],
   "description": "Template project for writing node package with napi-rs",
   "keywords": [

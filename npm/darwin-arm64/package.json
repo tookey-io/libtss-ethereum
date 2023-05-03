@@ -7,9 +7,9 @@
   "cpu": [
     "arm64"
   ],
-  "main": "libtss.darwin-arm64.node",
+  "main": "libtss-ethereum.darwin-arm64.node",
   "files": [
-    "libtss.darwin-arm64.node"
+    "libtss-ethereum.darwin-arm64.node"
   ],
   "description": "Template project for writing node package with napi-rs",
   "keywords": [

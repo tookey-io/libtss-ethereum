@@ -7,9 +7,9 @@
   "cpu": [
     "arm"
   ],
-  "main": "libtss.linux-arm-gnueabihf.node",
+  "main": "libtss-ethereum.linux-arm-gnueabihf.node",
   "files": [
-    "libtss.linux-arm-gnueabihf.node"
+    "libtss-ethereum.linux-arm-gnueabihf.node"
   ],
   "description": "Template project for writing node package with napi-rs",
   "keywords": [
